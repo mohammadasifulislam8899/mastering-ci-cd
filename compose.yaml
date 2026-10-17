@@ -1,0 +1,17 @@
+services:
+  express-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    image: express-app:latest
+    container_name: express-container
+
+    ports:
+      - "3001:3000"
+
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+
+    restart: unless-stopped
